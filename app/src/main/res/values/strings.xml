@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GsbApps</string>
+    <string-array name="type">
+        <item>Repas</item>
+        <item>Kilometrage</item>
+        <item>Nuité</item>
+    </string-array>
+
+</resources>
