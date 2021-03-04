@@ -19,15 +19,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class AcessHTTP extends AsyncTask<String, Integer, Long> {
-    public String ret="";
+    public String ret = "";
     private ArrayList<NameValuePair> parametres;
 
-    public AcessHTTP(){
+    public AcessHTTP() {
         parametres = new ArrayList<NameValuePair>();
     }
 
-    public void addParam(String nom, String valeur){
-        parametres.add(new BasicNameValuePair(nom,valeur));
+    public void addParam(String nom, String valeur) {
+        parametres.add(new BasicNameValuePair(nom, valeur));
     }
 
     @Override
@@ -52,6 +52,7 @@ public class AcessHTTP extends AsyncTask<String, Integer, Long> {
 
     @Override
     protected void onPostExecute(Long result) {
-        // preciser le code dans la classe qui l'appelle en surchargeant la methode
+
     }
+
 }
