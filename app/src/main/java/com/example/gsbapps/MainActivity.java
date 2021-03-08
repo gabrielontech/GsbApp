@@ -28,7 +28,12 @@ public class MainActivity extends AppCompatActivity {
     EditText userName, userPassword;
     Button userConnexion;
     private String user_name, user_pass;
+
+
     private String URL = "http://192.168.64.2/LoginRegister/validate.php";
+     /*
+         change the url value with your local IP address & the path of your php file
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,3 +86,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+/**
+ *
+ * this php code and request are just for user only NOT COMPTABLE !!!
+ * create database 'GSBapp' and give then 3 column , 1 :  name_user with values VARCHAR,
+ * 2 : pass_user with values VARCHAR, 3 id with VALUES SMALLINT
+ *
+ * copy this php code
+ *?php
+ * $server = 'localhost';
+ * $username = 'root';
+ * $database = 'Gsbapp';
+ * $password = '';
+ *
+ * $name = $_POST["username"];
+ * $user_password = $_POST["password"];
+ *
+ * $mysqli = new mysqli($server, $username, $password, $database);
+ *
+ * $sql = "SELECT * FROM user WHERE name_user = '$name' AND pass_user = '$user_password' AND id = 1";
+ * $result = mysqli_query($mysqli, $sql);
+ *
+ * if($data = mysqli_fetch_array($result)){
+ *     echo '1';
+ * }
+ *
+ * ?>
+ */
