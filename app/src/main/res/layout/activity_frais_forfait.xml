@@ -22,9 +22,10 @@
         android:orientation="vertical">
 
         <ImageView
+            android:layout_marginTop="10dp"
             android:id="@+id/imageView3"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             app:srcCompat="@drawable/logo_1_" />
 
         <TextView
@@ -36,46 +37,66 @@
             android:textSize="16dp" />
 
         <LinearLayout
+            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Type"
+                android:gravity="center_vertical"
+                android:text="Type :"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-
+                android:textSize="22dp"
                 />
 
             <Spinner
                 android:id="@+id/typeDeFrais"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/type" />
-
-            <TextView
-                android:id="@+id/textlol"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Quantité"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Ecrire la quanité ici"></EditText>
+                android:layout_marginStart="20dp"
+                android:entries="@array/type"
+                android:layout_marginLeft="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textlol"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:text="Quantité :"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
+
+            <EditText
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Ecrire la quanité ici"
+                android:layout_marginLeft="5dp"></EditText>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginEnd="15dp"
+            android:minWidth="20dp"
+            android:minHeight="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp">
 
             <Button
                 android:id="@+id/button7"
@@ -107,6 +128,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>

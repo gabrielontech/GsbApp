@@ -1,10 +1,8 @@
 package com.example.gsbapps;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,14 +10,10 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,12 +23,10 @@ public class MainActivity extends AppCompatActivity {
     Button userConnexion;
     private String user_name, user_pass;
 
-
-    private String URL = "http://192.168.64.2/LoginRegister/validate.php";
+    private String URL = "http://10.0.2.2/gsbapp/login.php";
      /*
          change the url value with your local IP address & the path of your php file
      */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
               @Override
               public void onClick(View v) {
                   login();
+
               }
           });
     }
@@ -59,13 +52,18 @@ public class MainActivity extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
+
                     if (response.contains("1")) {
-                        Intent MenuActivityIntent = new Intent(MainActivity.this, Menu.class);
+                        Intent MenuActivityIntent = new Intent(MainActivity.this, MenuActivity.class);
                         MenuActivityIntent.putExtra("name", userName.getText().toString());
                         startActivity(MenuActivityIntent);
+
+                    } else if (response.contains("2")){
+                        Toast.makeText(getApplication(), " L'accés est interdit au comptable",Toast.LENGTH_SHORT).show();
                     } else{
-                        Toast.makeText(getApplicationContext(), "Mot de passe ou identifiant invalide", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplication(), " Indentifiant et mot de passe inccorect",Toast.LENGTH_SHORT).show();
                     }
+
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -82,10 +80,9 @@ public class MainActivity extends AppCompatActivity {
             };
 
             Volley.newRequestQueue(this).add(stringRequest);
-
     }
-
 }
+
 /**
  *
  * this php code and request are just for user only NOT COMPTABLE !!!

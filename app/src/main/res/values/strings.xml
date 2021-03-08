@@ -6,4 +6,13 @@
         <item>Nuité</item>
     </string-array>
 
+    <string-array name="date_consultation">
+        <item>janvier 2021</item>
+        <item>février 2021</item>
+        <item>mars 2021</item>
+        <item>avril 2021</item>
+        <item>mai 2021</item>
+        <item>juin 2021</item>
+    </string-array>
+
 </resources>

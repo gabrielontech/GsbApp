@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+public class MoisFraisActivity extends AppCompatActivity {
 
-public class FraisHorsForfait extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.frais_hors_forfait);
-
+        setContentView(R.layout.activity_mois_frais);
     }
-
 }
