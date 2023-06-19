@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Button userConnexion;
     private String user_name, user_pass;
 
-    private String URL = "http://10.0.2.2/gsbapp/login.php";
+    private String URL = "put the API entry point in here";
      /*
          change the url value with your local IP address & the path of your php file
      */
